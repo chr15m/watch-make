@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while true;
+do
+  if ! make -q "$@";
+  then
+    echo "#-> Starting build: `date`"
+    make "$@";
+    echo "#-> Build complete."
+  fi
+  sleep 0.5;
+done
